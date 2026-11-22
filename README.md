@@ -63,8 +63,9 @@ $$
 
 Here $r$ is the influence vector, $q$ is base-relative when using
 base excitation, and powers and products inside the brackets are
-elementwise. The linear matrices are $C=B^T\operatorname{diag}(c)B$ and
-$K=B^T\operatorname{diag}(k)B$. `simulate` converts the system to first order
+elementwise. Let $D_c$ and $D_k$ be the diagonal matrices with entries
+$c_j$ and $k_j$, respectively. The linear matrices are $C=B^T D_c B$ and
+$K=B^T D_k B$. `simulate` converts the system to first order
 and integrates it with SciPy RK45 or DOP853. An external harmonic force
 has $F(t)=F_0\cos(\omega_d t)$, and a harmonic base **displacement**
 supplied to `harmonic_base` is converted to **acceleration** before
